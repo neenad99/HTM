@@ -1,0 +1,20 @@
+.navbar{
+    padding: 15px;
+}
+.navbar-brand{
+    font-weight: bold;
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.centre{
+    width: 600px;
+    background-color: whitesmoke;
+   padding: 20px 20px;
+   margin-left: 350px;
+   margin-top: 30px;
+}
+
+#validationCustom05{
+    width: 240px;
+}
