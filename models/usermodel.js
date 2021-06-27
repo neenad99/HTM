@@ -10,11 +10,23 @@ const userSchema = new Schema({
         type:String,
         required:true
     },
+    password:{
+        type:String,
+        required:true
+    },
     mobno:{
         type:String,
         required:true
     },
-    password:{
+    state:{
+        type:String,
+        required:true
+    },
+    city:{
+        type:String,
+        required:true
+    },
+    pincode:{
         type:String,
         required:true
     }

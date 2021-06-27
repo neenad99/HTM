@@ -11,10 +11,23 @@ const postSchema = new Schema({
         required:true
     },
     image:{
+        data:Buffer,
+        contentType:String,
+        // required:true
+    },
+    description:{
         type:String,
         required:true
     },
-    description:{
+    state:{
+        type:String,
+        required:true
+    },
+    city:{
+        type:String,
+        required:true
+    },
+    pincode:{
         type:String,
         required:true
     }

@@ -23,15 +23,18 @@ router.post("/register", async (req, res) => {
     const user = new Users({
         name:req.body.name,
         email:req.body.email,
+        password:hashedpassword,
         mobno:req.body.mobno,
-        password:hashedpassword
+        state:req.body.state,
+        city:req.body.city,
+        pincode:req.body.pincode
     });
 
     // create token
     const token = jwt.sign(
         // payload data
         {
-            name: user.name,
+            email:user.email,
             id: user._id,
         },
         process.env.TOKEN_SECRET
@@ -60,12 +63,12 @@ router.post('/login',async (req,res)=>{
     // check for password correctness
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if (!validPassword)return res.status(400).json({ error: "Password is wrong" });
-
+    
     // create token
     const token = jwt.sign(
         // payload data
         {
-            name: user.name,
+            email:user.email,
             id: user._id,
         },
         process.env.TOKEN_SECRET
@@ -73,6 +76,7 @@ router.post('/login',async (req,res)=>{
     
     res.json({
         message: "Login successful",
+        data:user,
         token:token
     });
 });

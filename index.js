@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const multer = require('multer');
 const path = require('path');
 const authRoute = require('./routes/auth');
 const useractionsRoute = require('./routes/useractions');
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use('/api/user',authRoute);
-// app.use("/api/actions", verifyTokenRoute, useractionsRoute);
+app.use("/api/user", verifyTokenRoute, useractionsRoute);
 
 var port = process.env.PORT;
 const dburl = process.env.CLOUD_MONGO_URI;
@@ -33,8 +34,8 @@ mongoose.connect(dburl,{useNewUrlParser: true,useUnifiedTopology: true})
 const uiPath = path.join(__dirname, 'UI');
 app.use(express.static(uiPath));
 
-app.get('/', (_req, res) => {
-    res.sendFile(`${uiPath}/templates/index.html`);
+app.get('/', (req, res) => {
+    res.sendFile(`${uiPath}/templates/login.html`);
 });
 
 // CATCH ALL OTHER ROUTES
