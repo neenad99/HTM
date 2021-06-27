@@ -22,7 +22,7 @@
 				<a class="navbar-brand" href="#">Barter</a>
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				</ul>
-				  <button class="btn btn-outline-success" type="submit">Dashboard</button>
+				  <a href="/dashboard"><button class="btn btn-outline-success" type="button">Dashboard</button></a>
 				</form>
 			  </div>
 			</div>
@@ -46,10 +46,13 @@
 
                  <!-- third input -->
                  <div class="mb-3 input">
-                  <input type="text" placeholder = "Category" class="form-control" id="exampleInputCategory" aria-describedby="categoryHelp">
+                  <input type="text" placeholder = "Pincode" class="form-control" id="pincode" aria-describedby="categoryHelp">
                 </div>
-                  
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mb-3 input">
+                  <input type="text" placeholder = "Category" class="form-control" id=category" aria-describedby="categoryHelp">
+                </div>
+
+                  <button type="button" id="submitbtn" class="btn btn-primary">Submit</button>
                 </form>
                        
                    </div>

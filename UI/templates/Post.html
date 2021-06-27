@@ -20,14 +20,14 @@
 				<a class="navbar-brand" href="#">Barter</a>
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				</ul>
-				  <button class="btn btn-outline-success" type="submit">Dashboard</button>
+				  <a href="/dashboard"><button class="btn btn-outline-success" type="button">Dashboard</button></a>
 				</form>
 			  </div>
 			</div>
 		  </nav>
 
           <div class = "centre">
-            <form>
+            <form id="formdata" enctype="multipart/form-data">
                 <div class="mb-3">
                   <label for="exampleInputItemName" class="form-label">Item Name</label>
                   <input type="text" class="form-control" id="exampleInputItemName" aria-describedby="ItemNameHelp"> 
@@ -52,7 +52,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
     
-                <button type="submit" class="btn btn-primary">Post</button>
+                <button type="button" id="submit" class="btn btn-primary">Post</button>
               </form>
         
           </div>

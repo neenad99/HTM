@@ -13,22 +13,32 @@ router.post("/action",async (req,res)=>{
         res.json({error:err,message:"unable to fetch details of post creator"});
     }
     
-    upload(req,res,(err)=>{
+    upload(req,res,async (err)=>{
         if(err){
             res.json({error:err,message:'upload Images Only'});
         }
         else{
-            console.log(req.file);
-            res.json({test:'test'});
+            console.log(res.body);
+            // var post = new Posts({   
+            //     name:req.body.name,
+            //     category:req.body.category,
+            //     image:req.file.destination+req.file.filename,
+            //     description:req.body.description,
+            //     state:user.state,
+            //     city:user.city,
+            //     pincode:user.pincode
+            // });
+
+            // try{
+            //     const savedPost = await post.save();
+            //     res.json({message:"post created successfully",data: savedPost,token:token});
+            // }catch(error){
+            //     res.status(400).json({'error':error,message:"Error in saving post"});
+            // }
         }
     });
 
-    // try{
-    //     const savedPost = await post.save();
-    //     res.json({message:"post created successfully",data: savedPost,token:token});
-    // }catch(error){
-    //     res.status(400).json({'error':error,message:"Error in saving post"});
-    // }
+    
 });
 
 module.exports = router; 

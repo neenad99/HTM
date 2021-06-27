@@ -38,6 +38,25 @@ app.get('/', (req, res) => {
     res.sendFile(`${uiPath}/templates/login.html`);
 });
 
+app.get('/signup',(req,res)=>{
+    res.sendFile(`${uiPath}/templates/signup.html`);
+});
+
+app.get('/dashboard',(req,res)=>{
+    res.sendFile(`${uiPath}/templates/dashboard.html`);
+});
+
+app.get('/profile',(req,res)=>{
+    res.sendFile(`${uiPath}/templates/profile.html`);
+});
+
+app.get('/post',(req,res)=>{
+    res.sendFile(`${uiPath}/templates/post.html`);
+});
+
+app.get('/view',(req,res)=>{
+    res.sendFile(`${uiPath}/templates/view.html`);
+});
 // CATCH ALL OTHER ROUTES
 app.get('*', (req, res) => res.status(404).json({ message: 'Welcome to Dummy App', error: 'Sorry, this route is not available' }));
 app.post('*', (req, res) => res.status(404).json({ message: 'Welcome to Dummy App', error: 'Sorry, this route is not available' }));
