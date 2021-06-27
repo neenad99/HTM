@@ -1,0 +1,107 @@
+/* === Google Font ===*/
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo 2", cursive;
+}
+
+/* === Variables Define ===*/
+:root {
+  --primary-color: #62edc5;
+  --white-color: #fff;
+  --black-color: #0d0f44;
+  --light-gray: #e4e8ee;
+}
+
+/* === Body CSS ===*/
+body {
+  background-color: #0aa1d4;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* === Main Content CSS ===*/
+.wrapper {
+  padding: 50px 25px 0;
+  max-width: 668px;
+  width: 100%;
+  margin: auto;
+}
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-image: url("images/bg-1.svg"); */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+.wrapper .headline .logo {
+  text-align: center;
+  padding-bottom: 2.5em;
+}
+
+.wrapper .headline {
+  text-align: center;
+  padding-bottom: 2em;
+}
+.wrapper .headline h1 {
+  color: white;
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 52px;
+}
+
+.container {
+  text-align: center;
+}
+
+.box1 {
+  width: 150px;
+  height: 150px;
+  background: #12EEAF; 
+  border-radius: 25px;
+  display: inline-flex;
+  margin:0 40px;
+  padding: 2em;
+  align-items: center;
+}
+
+.box2 {
+  width: 150px;
+  height: 150px;
+  background: #12EEAF;
+  border-radius: 25px; 
+  display: inline-flex;
+  margin: 25px 40px;
+  padding: 2em;
+  align-items: center;
+}    
+
+@media (max-width: 1030px) {
+  .wrapper::before {
+    left: -25%;
+    min-height: 60vh;
+    height: 500px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    max-width: 550px;
+  }
+  .wrapper .headline h1 {
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
