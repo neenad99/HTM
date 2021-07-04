@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <h1>Hello World</h1>
     <form enctype="multipart/form-data" id="formdata">
-        <input type="file" name="myImage" id="imgid">
-        <br>
-        <button type="button" id="submitid">Submit</button>
+      <input type="file" name="myImage" id="imgid" />
+      <br />
+      <button type="button" id="submitid">Submit</button>
     </form>
 
     <script>
-        const button = document.getElementById('submitid');
-        const form = document.getElementById('formdata');
-        const host='http://localhost:3000/api/user';
-        button.addEventListener('click',()=>{
-            console.log('button clicked');
-            FormInput = new FormData(form);
-            console.log(FormInput);
-            const req = new Request(`${host}/action`,{
-                method:'POST',
-                headers:{
-                    'auth-token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiYzEyM0BnbWFpbC5jb20iLCJpZCI6IjYwZDdmMzU5NDQ1NDk2MjkyNDNhNDhlYiIsImlhdCI6MTYyNDc3MTM5OH0.Z9Pec6bKhpowGNaRcu-s632C--FrGoJeUi4UxndmzrU'
-                },
-                body:FormInput
-            });
-
-            fetch(req).then((resp)=>resp.json().then((res)=>{
-                console.log('image uploaded check uploads folder');
-                console.log(res);
-            }));
+      const button = document.getElementById("submitid");
+      const form = document.getElementById("formdata");
+      const host = "http://localhost:3000/api/user";
+      button.addEventListener("click", () => {
+        console.log("button clicked");
+        FormInput = new FormData(form);
+        console.log(FormInput);
+        const req = new Request(`${host}/action`, {
+          method: "POST",
+          headers: {
+            "auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiYzEyM0BnbWFpbC5jb20iLCJpZCI6IjYwZDdmMzU5NDQ1NDk2MjkyNDNhNDhlYiIsImlhdCI6MTYyNDc3MTM5OH0.Z9Pec6bKhpowGNaRcu-s632C--FrGoJeUi4UxndmzrU",
+          },
+          body: FormInput,
         });
+
+        fetch(req).then((resp) =>
+          resp.json().then((res) => {
+            console.log("image uploaded check uploads folder");
+            console.log(res);
+          })
+        );
+      });
     </script>
-</body>
+  </body>
 </html>
