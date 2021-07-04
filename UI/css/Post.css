@@ -1,20 +1,31 @@
-.navbar{
-    padding: 15px;
+body {
+  background-color: #0aa1d4;
 }
-.navbar-brand{
-    font-weight: bold;
-    margin-left: 50px;
-    font-size: 30px;
+.navbar {
+  padding: 15px;
+  height: 80px;
+  box-shadow: 0 8px 6px -6px #999;
 }
-
-.centre{
-    width: 600px;
-    background-color: whitesmoke;
-   padding: 20px 20px;
-   margin-left: 350px;
-   margin-top: 30px;
+.navbar-brand {
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 30px;
 }
 
-#validationCustom05{
-    width: 240px;
+.navbar-light .navbar-brand {
+  color: white;
+}
+
+.btn {
+  background-color: #62edc5;
+}
+.centre {
+  width: 600px;
+  background-color: whitesmoke;
+  padding: 20px 20px;
+  margin: 4em auto;
+}
+
+#validationCustom05 {
+  width: 240px;
 }
